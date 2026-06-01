@@ -182,7 +182,7 @@ var problems = [
     images: [{src:"tennis",cls:"full",alt:"Peter Chen Serving"}],
     questions: [
       {
-        text: "Translational kinetic energy of the ball immediately after contact.",
+        text: "Calculate the translational kinetic energy of the ball immediately after contact.",
         unit: "J",
         answer: 70.1, tol: 0.02,
         hints: [
@@ -192,7 +192,7 @@ var problems = [
         ]
       },
       {
-        text: "Total kinetic energy (translational + rotational) of the ball.",
+        text: "Calculate the total kinetic energy (translational + rotational) of the ball.",
         unit: "J",
         answer: 72.2, tol: 0.02,
         hints: [
@@ -202,7 +202,7 @@ var problems = [
         ]
       },
       {
-        text: "Speed of the point at the bottom of the ball at the moment it reaches the ground (topspin).",
+        text: "Calculate the speed of the point at the bottom of the ball at the moment it reaches the ground (topspin). Assume the ball moves at a 38 degree angle with the horizontal, and has the same initial and final velocities.",
         unit: "m/s",
         answer: 38.8, tol: 0.02,
         hints: [
