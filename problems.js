@@ -76,18 +76,20 @@ var problems = [
         ]
       },
       {
-        text: "What is the tension at the lowest point of the chain? (evaluate for \u03b8 = 30\u00b0)",
-        unit: "tan(θ)",
-        answer: 0.577, tol: 0.015,
+        text: "What is the tension at the lowest point of the chain for \u03b8 = 30\u00b0? Give an exact symbolic answer in terms of m and g.",
+        unit: "",
+        type: "symbolic",
+        answers: ["mg/(2sqrt3)","mg/(2*sqrt3)","(mg)/(2sqrt3)","mg/(sqrt3*2)","mg/(2\u221a3)","(1/2)mg/sqrt3","mg*1/(2sqrt3)"],
         hints: [
-          "\u{1F4A1} Hint 1: At the lowest point the chain is horizontal, so the tension there is purely horizontal. At the endpoint, the tension has both vertical and horizontal components.",
-          "\u{1F4A1} Hint 2: Vertical component at endpoint = mg/2 = T_end\u00b7cos\u03b8. Horizontal component = T_end\u00b7sin\u03b8 = tension at bottom. So T_bottom = (mg/2)\u00b7tan\u03b8.",
-          "\u2705 Answer: T_bottom = (mg/2)\u00b7tan\u03b8. For \u03b8=30\u00b0: tan(30\u00b0) \u2248 0.577."
+          "\u{1F4A1} Hint 1: At the lowest point the chain is horizontal, so the tension there is purely horizontal. Consider a free-body diagram of half the chain: the only horizontal force is the tension at the bottom, and the only vertical forces are the hook\u2019s normal force (mg/2 upward) and gravity (mg/2 downward).",
+          "\u{1F4A1} Hint 2: At the endpoint the tension T_end acts along the chain at angle \u03b8 from the vertical. Its vertical component equals mg/2, so T_end = (mg/2)/cos\u03b8. The horizontal component of T_end equals the tension at the bottom: T_bottom = T_end\u00b7sin\u03b8 = (mg/2)\u00b7tan\u03b8. Now substitute \u03b8 = 30\u00b0 and simplify tan(30\u00b0) = 1/\u221a3.",
+          "\u2705 Answer: T_bottom = (mg/2)\u00b7tan(30\u00b0) = (mg/2)\u00b7(1/\u221a3) = mg/(2\u221a3). Enter: mg/(2sqrt3)"
         ]
       }
+
     ]
   },
-  {
+    {
     id: "flyingpig", label: "Room 10 (HS)", icon: "\u{1F416}", difficulty: "medium",
     pctX: 83, pctY: 55,
     section: "3 \u2014 Linear Momentum", title: "3.1 Flying Pigs",
@@ -108,27 +110,30 @@ var problems = [
         ]
       },
       {
-        text: "What is the impulse delivered to the pig by the ground?",
-        unit: "N·s",
-        answer: 1.0, tol: 0.02,
+        text: "What is the impulse delivered to the pig by the ground? Give an exact symbolic answer in terms of m, g, and h.",
+        unit: "",
+        type: "symbolic",
+        answers: ["msqrt(2gh)","m*sqrt(2gh)","msqrt2gh","m*sqrt(2*g*h)","m(sqrt(2gh))","sqrt(2gh)*m","m\u221a(2gh)","m\u00b7\u221a(2gh)"],
         hints: [
-          "\u{1F4A1} Hint 1: Impulse = change in momentum = m\u00b7\u0394v. What is the pig\u2019s velocity just before hitting the ground? What is it after (no rebound)?",
-          "\u{1F4A1} Hint 2: Just before impact: v = \u221a(2gh) downward (kinematics). Just after: v = 0. So \u0394v = \u221a(2gh) upward, and J = m\u221a(2gh).",
-          "\u2705 Answer: J = m\u221a(2gh), so the coefficient k = 1."
+          "\u{1F4A1} Hint 1: Impulse = change in momentum = m\u00b7\u0394v. The pig does not rebound, so its final velocity is zero. What is its velocity just before hitting the ground after falling from height h?",
+          "\u{1F4A1} Hint 2: Using kinematics: v = \u221a(2gh) downward just before impact. After impact v = 0, so \u0394v = \u221a(2gh) upward. Therefore J = m\u221a(2gh). Enter: msqrt(2gh).",
+          "\u2705 Answer: J = m\u221a(2gh). Enter: msqrt(2gh)"
         ]
       },
       {
-        text: "What is the average force exerted on the pig by the ground during the collision?",
-        unit: "N",
-        answer: 1.0, tol: 0.02,
+        text: "What is the average force exerted on the pig by the ground during the collision? Give an exact symbolic answer in terms of m, g, h, and t.",
+        unit: "",
+        type: "symbolic",
+        answers: ["msqrt(2gh)/t+mg","m*sqrt(2gh)/t+mg","msqrt(2gh)/t + mg","m*sqrt(2gh)/t + mg","mg+msqrt(2gh)/t","mg + msqrt(2gh)/t","m\u221a(2gh)/t+mg","m\u221a(2gh)/t + mg"],
         hints: [
-          "\u{1F4A1} Hint 1: Average force = impulse \u00f7 collision time. You found the impulse in the previous part.",
-          "\u{1F4A1} Hint 2: F_avg = J/t = m\u221a(2gh)/t. The coefficient is therefore 1.",
-          "\u2705 Answer: F_avg = m\u221a(2gh)/t, coefficient k = 1."
+          "\u{1F4A1} Hint 1: The net average force from the ground equals impulse \u00f7 t. But be careful — the impulse J = m\u221a(2gh) only accounts for the change in momentum. The ground must also support the pig\u2019s weight mg throughout the collision.",
+          "\u{1F4A1} Hint 2: The total average upward force from the ground is F_avg = J/t + mg = m\u221a(2gh)/t + mg. The J/t term stops the pig; the mg term balances gravity during the collision interval.",
+          "\u2705 Answer: F_avg = m\u221a(2gh)/t + mg. Enter: msqrt(2gh)/t+mg"
         ]
       }
     ]
   },
+
   {
     id: "gym", label: "Gym (Building C)", icon: "\u{1F3CB}", difficulty: "easy",
     pctX: 61, pctY: 68,
@@ -172,7 +177,7 @@ var problems = [
       }
     ]
   },
-  {
+ {
     id: "tennis", label: "Tennis Courts", icon: "\u{1F3BE}", difficulty: "hard",
     pctX: 26, pctY: 68,
     section: "5 \u2014 Energy & Momentum of Rotating Systems", title: "5.1 Tennis Serve",
@@ -202,17 +207,18 @@ var problems = [
         ]
       },
       {
-        text: "Calculate the speed of the point at the bottom of the ball at the moment it reaches the ground (topspin). Assume the ball moves at a 38 degree angle with the horizontal, and has the same initial and final velocities.",
+        text: "Calculate the speed of the point at the bottom of the ball at the moment before it reaches the ground. Assume the ball moves at a 38 degree angle with the horizontal, and has the same initial and final velocities as well as constant topspin.",
         unit: "m/s",
-        answer: 38.8, tol: 0.02,
+        answer: 41.5, tol: 0.5,
         hints: [
-          "\u{1F4A1} Hint 1: For a rolling/spinning ball, each point\u2019s velocity = v_cm + \u03c9\u00d7r (vector sum). For topspin moving forward, which direction does the bottom of the ball rotate?",
-          "\u{1F4A1} Hint 2: With topspin, the bottom of the ball moves backward relative to the center. So v_bottom = v_cm - \u03c9r (both in the forward direction).",
-          "\u2705 Answer: v_bottom = 49.17 - 314.2\u00d70.033 = 49.17 - 10.37 \u2248 38.8 m/s forward."
+          "\u{1F4A1} Hint 1: The ball travels at 38\u00b0 below horizontal, so the centre of mass has both a horizontal component (v\u00b7cos38\u00b0) and a downward vertical component (v\u00b7sin38\u00b0). The spin only affects the horizontal component \u2014 with topspin the bottom of the ball moves backward relative to the centre. Find each component separately.",
+          "\u{1F4A1} Hint 2: v_x (cm) = 49.17\u00b7cos(38\u00b0) \u2248 38.74 m/s. Spin subtracts at the bottom: v_bottom_x = 38.74 \u2212 \u03c9r = 38.74 \u2212 10.37 \u2248 28.37 m/s. Vertical is unchanged: v_bottom_y = 49.17\u00b7sin(38\u00b0) \u2248 30.26 m/s downward.",
+          "\u2705 Answer: |v_bottom| = \u221a(28.37\u00b2 + 30.26\u00b2) = \u221a(804.9 + 915.7) = \u221a1720.6 \u2248 41.5 m/s."
         ]
       }
     ]
   },
+
   {
     id: "pool", label: "Pool (Building A)", icon: "\u{1F3CA}", difficulty: "easy",
     pctX: 54, pctY: 31,

@@ -25,7 +25,22 @@
   </div>
 </div>
 <p class="authors">Problems by Sawyer Jacobson &amp; Ben Rosenfeld &mdash; May 2026</p>
-
+ 
+<!-- ── Welcome Popup ── -->
+<div class="welcome-overlay" id="welcomeOverlay">
+  <div class="welcome-modal">
+    <div class="welcome-icon">&#9883;</div>
+    <h2 class="welcome-title">Welcome to Campus Physics</h2>
+    <p class="welcome-body">Weston School is your lab. Each bubble on the map marks a real campus location with a physics problem inspired by that spot.</p>
+    <ul class="welcome-steps">
+      <li><span class="ws-dot easy"></span><strong>Click any bubble</strong> to open its problem set</li>
+      <li><span class="ws-dot medium"></span><strong>3 attempts</strong> per question — hints unlock as you go</li>
+      <li><span class="ws-dot hard"></span><strong>Solve them all</strong> to complete the map</li>
+    </ul>
+    <button class="welcome-btn" id="welcomeClose">Let&rsquo;s go &rarr;</button>
+  </div>
+</div>
+ 
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="modal">
     <button class="modal-close" id="modalClose">&#x2715;</button>
@@ -37,6 +52,16 @@
     <div class="modal-body" id="modalBody"></div>
   </div>
 </div>
+  <script>
+    (function() {
+      var overlay = document.getElementById("welcomeOverlay");
+      var btn = document.getElementById("welcomeClose");
+      function dismiss() { overlay.classList.add("hidden"); }
+      btn.addEventListener("click", dismiss);
+      overlay.addEventListener("click", function(e) { if (e.target === overlay) dismiss(); });
+      document.addEventListener("keydown", function(e) { if (e.key === "Escape" && !overlay.classList.contains("hidden")) dismiss(); });
+    })();
+  </script>
   <script src="problems.js"></script>
 </body>
 </html>
